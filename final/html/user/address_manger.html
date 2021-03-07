@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.css">
+        <script src="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.js"></script>
+        <script src="/js/locale/bootstrap-table-zh-CN.js"></script>
+        <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+          <link rel="stylesheet" href="/css/public/toast.css">
+          <script src="/js/public/toast.js"></script>
+  <title>地址管理</title>
+</head>
+
+<body>
+    <div class="navhear container"></div>
+    <script>
+      $('.navhear').load('/html/public/nav_head.html');
+    </script>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="#">首页</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">个人中心</li>
+      <li class="breadcrumb-item active" aria-current="page">地址管理</li>
+    </ol>
+  </nav>
+
+
+
+  <div class="container">
+
+
+      <div class="btn-group " role="group" aria-label="Button group with nested dropdown">
+        <div id="toolbar">
+          <a href="#" class="btn btn-primary "  data-toggle="modal" data-target="#add_address">添加地址</a>
+        </div>
+        <a href="/html/user/preson_center.html" class="btn btn-primary add">个人中心</a>
+        <a href="/html/user/address_manger.html" class="btn btn-primary add">地址管理</a>
+
+        <div  class="btn-group row" role="group">
+          <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            订单中心
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="/html/user/finish_order.html">已完成订单</a>
+              <a class="dropdown-item" href="/html/user/notyet_finish_order.html">未完成订单</a>
+          </div>
+        </div> 
+      </div>
+
+
+
+          <div>
+            <table id="table"></table>
+          </div>
+
+
+          <div class="modal  fade " id="add_address" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered " role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">地址详细</h5>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="col">
+                  <span>收货人</span>
+                  <div class="input-group">
+                    <input type="text" class="form-control add_shoppinger" >
+                  </div>
+                  <span>地址</span>
+                  <div class="input-group">
+                    <input type="text" class="form-control add_address1">
+                  </div>
+                  <span>手机号</span>
+                  <div class="input-group">
+                    <input type="text" class="form-control add_phone">
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary add_address" data-dismiss="modal">确定</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  </div>
+
+
+
+      <script>
+        $("#shopping_car").click(function (e) {
+          e.preventDefault();
+          window.location.href = "/html/user/address_manger.html"
+        });
+        $("#person_center").click(function (e) {
+          e.preventDefault();
+          window.location.href = "/html/user/preson_center.html"
+        });
+      </script>
+      
+<script src="/js/user/address_manger.js"></script>
+</body>
+
+</html>

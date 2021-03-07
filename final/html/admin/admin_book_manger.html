@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <title>图书管理</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.css">
+  <link rel="stylesheet" href="/css/public/toast.css">
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.js"></script>
+  <script src="/js/locale/bootstrap-table-zh-CN.js"></script>
+  <script src="/js/public/toast.js"></script>
+  <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+</head>
+
+<body>
+  <div class="navhear container"></div>
+  <script>
+    $('.navhear').load('/html/public/nav_head_admin.html');
+  </script>
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">图书管理</li>
+      </ol>
+    </nav>
+
+    <table id="table"></table>
+
+    <div>
+      <div id="toolbar" style="padding-left:10px;">
+        <button class="btn btn-success add_book" data-toggle="modal" data-target="#addnewbook">添加新书</button>
+      </div>
+    </div>
+  </div>
+
+   <div class="modal  fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered " role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLabel">书本详细</h5>
+
+           </button>
+         </div>
+         <div class="modal-body">
+
+          <div class="col">
+
+              <span>书名</span>
+              <div class="input-group">
+                 <input type="text" class="form-control book_name" readonly="readonly">
+              </div>
+
+              <span>类别</span>
+              <div class="input-group">
+                <input type="text" class="form-control book_class" readonly="readonly">
+              </div>
+
+             <span>价格</span>
+             <div class="input-group">
+               <input type="text" class="form-control book_price">
+             </div>
+           
+          </div>
+
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-secondary confirm" data-dismiss="modal">确定</button>
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+      <div class="modal  fade " id="addnewbook" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered " role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">书本详细</h5>
+
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <div class="col">
+
+                <span>书名</span>
+                <div class="input-group">
+                  <input type="text" class="form-control book_name1" >
+                </div>
+
+                <span>类别</span>
+                <div class="input-group">
+                  <input type="text" class="form-control book_class1">
+                </div>
+
+                <span>价格</span>
+                <div class="input-group">
+                  <input type="text" class="form-control book_price1">
+                </div>
+
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary book_add_confirm" data-dismiss="modal">确定</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  <!-- js脚本外部引用区 -->
+  <script src="/js/admin/admin_book_manger.js"></script>
+</body>
+
+</html>

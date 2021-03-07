@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <title>个人中心</title>
+</head>
+<body>
+    
+    <div class="navhear container"></div>
+      <script>
+          $('.navhear').load('/html/public/nav_head.html');
+      </script>
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">首页</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">个人中心</li>
+        </ol>
+    </nav>
+
+
+
+    <div class="container ">    
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+             <a href="/html/user/preson_center.html" class="btn btn-primary add">个人中心</a>
+           <a href="/html/user/address_manger.html" class="btn btn-primary add">地址管理</a>
+
+            <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    订单中心
+                </button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <a class="dropdown-item" href="/html/user/finish_order.html">已完成订单</a>
+                    <a class="dropdown-item" href="/html/user/notyet_finish_order.html">未完成订单</a>
+                </div>
+            </div>
+        </div>
+
+    <div class="">
+              <div class="">
+                  <h3 style="margin-bottom:10px">个人信息</h3>
+                  <div class="border-bottom " style="margin-bottom:10px"></div>
+                  <div>
+                      <h4>基础信息</h4>
+                      <div class="border-bottom " style="margin-bottom:10px"></div>
+                      <div class="container  border-bottom">
+                          <div class="row text-center">
+                              <p style="margin-right: 10px;">姓名:</p>
+                              <p class="username"></p>
+                          </div>
+                      </div>
+
+
+                      <div class="border-bottom " style="margin-bottom:10px"></div>
+                      <div class="container  border-bottom">
+                          <div class="row text-center">
+                              <p style="margin-right: 10px;">生日:</p>
+                              <p class="userbirthday"></p>
+                          </div>
+                      </div>
+                      <div class="border-bottom " style="margin-bottom:10px"></div>
+                      <div class="container  border-bottom">
+                          <div class="row text-center">
+                              <p style="margin-right: 10px;">性别:</p>
+                              <p class="sex"></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+</div>
+<script src="/js/user/person_center.js"></script>
+</body>
+</html>
