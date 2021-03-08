@@ -10,7 +10,6 @@
       </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta/dist/css/bootstrap-select.min.css">
 
 <!-- Latest compiled and minified JavaScript -->
@@ -119,18 +118,18 @@
         
         $.ajax({
           type: "post",
-          url: "http://localhost:7070/untitled2_war/resigin",
+          url: "http://localhost/test/back/resigin.php",
           data: 
           {
             userid:$(".userid").val(),
-            user_password:$(".user_password").val(),
-            real_name:$(".real_name").val(),
+            userpw:$(".user_password").val(),
+            truename:$(".real_name").val(),
             birthday:$(".birthday").val(),
             sex:sex
           },
           dataType: "text",
           success: function (response) {
-            if(JSON.parse(response)=="1")
+            if(parseInt(response)==0)
             {
               $.toast({
               type: 'warning',

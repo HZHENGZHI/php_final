@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 $servername = "rm-bp113sao09r93e60yvo.mysql.rds.aliyuncs.com";
 $username = "hzz_user";
 $password = "DUIdui421";
@@ -32,4 +32,5 @@ $arrlength = count($ar);
 // }
 echo json_encode($ar, JSON_UNESCAPED_UNICODE);
 $conn->close();
-?>
+?> -->
+

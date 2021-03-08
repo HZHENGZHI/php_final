@@ -55,13 +55,13 @@
         url: "http://localhost:7070/untitled2_war/login",
         data:
         {
-          token:$.cookie('name')
+          token:$.cookie('user')
         },
         dataType: "text",
         success: function (response) {
           if(parseInt(response)==0)
           {
-            window.location.href="/html/user/login.html"
+            window.location.href="/final/html/user/login.html"
           }
         }
       });
@@ -70,9 +70,9 @@
       $(".exit").click(function (e) { 
         e.preventDefault();
           console.log("exit")
-          console.log($.cookie('name'))
-          $.removeCookie('name');
-          window.location.href="/html/user/login.html"
+          console.log($.cookie('user'))
+          $.removeCookie('user');
+          window.location.href="/final/html/user/login.html"
       });
     </script>
   </nav>

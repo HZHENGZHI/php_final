@@ -1,50 +1,36 @@
-
-window.onload = function () {
-$.ajax({
-  type: "get",
-  url: "http://localhost:7070/untitled2_war/login",
-  data: 
-  {
-    token: $.cookie('name')
-  },
-  dataType: "text",
-  success: function (response) {
-    if(parseInt(response)==1)
-    {
-      console.log($.cookie('name'))
-      console.log("yes")
-      window.location.href = "/html/user/book_search.html"
-    }
-  }
-});
-}
-
+ $.toastDefaults.position = 'bottom-right';
+ $.toastDefaults.dismissible = true;
+ $.toastDefaults.stackable = true;
+ $.toastDefaults.pauseDelayOnHover = true;
 
 $("#login").click(function (e) {
-  if ($("#id").val() == "" || $("#pw").val()=="")
-  {
-    alert("账号密码不为空");
-  }
-  else
-  {
+  console.log($("#id").val())
+  console.log($("#pw").val())
   $.ajax({
     type: "post",
-    url: "http://localhost:7070/untitled2_war/login",
+    url: "http://localhost/test/back/login.php",
     data: {
-      id: $("#id").val(),
-      pw: $("#pw").val()
+      "id":$("#id").val(),
+      "pw":$("#pw").val()
     },
-    dataType: "json",
+    dataType: "text",
     success: function (response) {
-      // if(parseInt(response)==1)
+      if(parseInt(response)==0)
       {
-        window.location.href="/html/user/book_search.html"
-        $.cookie('name', response, {expires: 20});
-        name = $.cookie('name'); 
-        console.log(name)
+        $.toast({
+          type: 'warning',
+          title: '警告',
+          subtitle: '',
+          content: "账号或密码不正确",
+          delay: 5000
+        });
       }
-      console.log(response)
+      else
+      {
+        console.log(response);
+        $.cookie('user', response, {expires: 7})
+        window.location.href="/final/html/user/book_search.html"
+      }
     }
   });
-}
 });
