@@ -52,7 +52,7 @@
 
       $.ajax({
         type: "get",
-        url: "http://localhost:7070/untitled2_war/login",
+        url: "http://localhost/test/back/check_login.php",
         data:
         {
           token:$.cookie('user')
@@ -61,6 +61,7 @@
         success: function (response) {
           if(parseInt(response)==0)
           {
+            alert(response)
             window.location.href="/final/html/user/login.html"
           }
         }

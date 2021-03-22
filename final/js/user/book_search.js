@@ -25,7 +25,7 @@ $('#table').bootstrapTable({
     toolbar:'toolbar',
     local:'zh-CN',
     toolbar:'#toolbar',//工具栏
-    url: "http://localhost:7070/untitled2_war/book_search",
+    url: "http://localhost/test/back/book_search.php",
     method:"GET",
    
 columns: [{
@@ -118,8 +118,8 @@ columns: [{
     formatter:function(value,item,index)
         {
             item.id=false;
-        var btnfix = '<button type="button" class="btn shadow-none add_car" style="margin-left:-10px"> <img src="/img/bootstrap-icons-1.2.1/Cart-plus.svg " class="text-success" alt="" width="22" height="22" > </button>'
-             +'<button type="button" class="btn shadow-none add_collection"> <img src="/img/bootstrap-icons-1.2.1/Hand-thumbs-up.svg " class="text-success" alt="" width="22" height="22" > </button>'
+        var btnfix = '<button type="button" class="btn shadow-none add_car" style="margin-left:-10px"> <img src="/final/img/bootstrap-icons-1.2.1/Cart-plus.svg " class="text-success" alt="" width="22" height="22" > </button>'
+             +'<button type="button" class="btn shadow-none add_collection"> <img src="/final/img/bootstrap-icons-1.2.1/Hand-thumbs-up.svg " class="text-success" alt="" width="22" height="22" > </button>'
              return btnfix
         },
 }

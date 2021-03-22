@@ -13,7 +13,8 @@
 
   if($result->num_rows>0)
   {
-    return loginjwt($_POST["id"], $_POST["pw"]);
+    $kk=loginjwt($_POST["id"], $_POST["pw"]);
+    echo $kk;
   }
   else 
   {
