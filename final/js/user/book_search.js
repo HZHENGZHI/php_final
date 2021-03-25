@@ -58,9 +58,9 @@ columns: [{
            
           $.ajax({
               type: "post",
-              url: "http://localhost:7070/untitled2_war/book_search",
+              url: "http://localhost/test/back/book_search.php",
               data: {
-                  token:$.cookie('name'),
+                  token:$.cookie('user'),
                   kk: JSON.stringify(row),
                   method:"shopping_car",
               },
@@ -89,14 +89,15 @@ columns: [{
 
            $.ajax({
                type: "post",
-               url: "http://localhost:7070/untitled2_war/book_search",
+               url: "http://localhost/test/back/book_search.php",
                data: {
-                   token: $.cookie('name'),
+                   token: $.cookie('user'),
                    kk: JSON.stringify(row),
                    method: "add_collection",
                },
                dataType: "text",
                success: function (response) {
+                   console.log(response)
                     var rng = 1,
                         type = TYPES[0],
                         title = TITLES[type],
@@ -124,14 +125,10 @@ columns: [{
         },
 }
 ],})
-$(".add_car").click(function (e) { 
-    var data=$("#table").bootstrapTable('getSelections')
-    var k=JSON.stringify(data)
-    
-    // console.log("1234")
-   
-    
-});
+// $(".add_car").click(function (e) { 
+//     var data=$("#table").bootstrapTable('getSelections')
+//     var k=JSON.stringify(data)    
+// });
 $(".total-car").click(function (e) { 
     e.preventDefault();
     var data1=$("#table").bootstrapTable('getSelections')
@@ -151,15 +148,15 @@ $(".total-car").click(function (e) {
     {  
             $.ajax({
             type: "post",
-            url: "http://localhost:7070/untitled2_war/book_search",
+            url: "http://localhost/test/back/book_search.php",
             data: {
-                token: $.cookie('name'),
+                token: $.cookie('user'),
                 kk: JSON.stringify(data1[i]),
                 method: "total_car"
             },
             dataType: "text",
             success: function (response) {
-                // console.log(response)
+                console.log(response)
                 var rng = 1,
                     type = TYPES[2],
                     title = TITLES[type],

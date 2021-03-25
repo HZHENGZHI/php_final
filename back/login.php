@@ -1,23 +1,23 @@
 <?php
   include "../token.php";
-  $servername = "rm-bp113sao09r93e60yvo.mysql.rds.aliyuncs.com";
-  $username = "hzz_user";
-  $password = "DUIdui421";
-  $dbname = "java_web";
+  include "../database.php";
 
-  // 创建连接
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  $sql = "SELECT * FROM user where userid=" . $_POST["id"] . " and userid=" . $_POST["pw"];
-  $result = $conn->query($sql);
-  $ar=array();
+  $userid=$_POST['id'];
+  $userpw=$_POST['pw'];
+  $database=getConnection();
+  $datas=$database->select("user",
+    "*",
+  [
+    "userid"=>$userid,
+    "userpw"=>$userpw
+  ]);
 
-  if($result->num_rows>0)
+  if(sizeof($datas)==1)
   {
-    $kk=loginjwt($_POST["id"], $_POST["pw"]);
-    echo $kk;
+    echo loginjwt($_POST['id'], $_POST['pw']);
   }
-  else 
+  else
   {
-    return 0;
+    echo 0;
   }
 ?>

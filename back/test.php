@@ -1,20 +1,21 @@
 <?php
 include "../token.php";
-include "./database.php";
-$conn = getConnection();
-$sql = "SELECT * FROM book";
-$result = $conn->query($sql);
-$array = array();
-if ($result->num_rows > 0) {
-  while ($row = $result->fetch_assoc()) {
-    array_push($array, $row);
-  }
+include "../database.php";
+use Medoo\Medoo;
+$database = new Medoo([
+  // required
+  'database_type' => 'mysql',
+  'database_name' => 'java_web',
+  'server' => 'rm-bp113sao09r93e60yvo.mysql.rds.aliyuncs.com',
+  'username' => 'hzz_user',
+  'password' => 'DUIdui421',
+]);
+$datas = $database->select("book", [
+    "book_name",
+]);
+
+foreach ($datas as $data) {
+  echo "user_name:" . $data["book_name"];
 }
-
-
-$kk= json_encode($array, JSON_UNESCAPED_UNICODE);
-$token=carjwt($kk);
-echo $token;
-
 
 ?>

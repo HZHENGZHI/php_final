@@ -43,7 +43,7 @@ use \Firebase\JWT\JWT;
 					JWT::$leeway = 60;//当前时间减去60，把时间留点余地
 					$decoded = JWT::decode($jwt, $key, ['HS256']); //HS256方式，这里要和签发的时候对应
 					$arr = (array)$decoded;
-					print_r($arr);
+					return $arr;
 	    	} catch(\Firebase\JWT\SignatureInvalidException $e) {  //签名不正确
 	    		return 0;
 	    	}catch(\Firebase\JWT\BeforeValidException $e) {  // 签名在某个时间点之后才能用

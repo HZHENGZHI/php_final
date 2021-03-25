@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'e2b12a84d62b57e4f015254a2c775d49c4dc5d0f',
+    'reference' => '4788fe66f8d43c7e1fd2b1b776e67a180acf4caa',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,16 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'e2b12a84d62b57e4f015254a2c775d49c4dc5d0f',
+      'reference' => '4788fe66f8d43c7e1fd2b1b776e67a180acf4caa',
+    ),
+    'catfan/medoo' => 
+    array (
+      'pretty_version' => 'v1.7.10',
+      'version' => '1.7.10.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2d675f73e23f63bbaeb9a8aa33318659a3d3c32f',
     ),
     'firebase/php-jwt' => 
     array (

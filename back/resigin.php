@@ -1,27 +1,33 @@
 <?php
-  include "./database.php";
+  include "../database.php";
 
   
   function checkaccount($id,$pw)
   {
-    $conn=getConnection();
-    $sql="select * from user where userid=".$id ." and userpw=".$pw;
-    $result = $conn->query($sql);
-    if($result->num_rows > 0)
+    $database=getConnection();
+    $datas=$database->select("user","*",[
+      "userid"=>$id,
+      "userpw"=>$pw
+    ]);
+    if(sizeof($datas)>=1)
     {
       return false;
     }
-    else if($result->num_rows ==0)
+    else
     {
       return true;
     }
   }
   function resiginaccount($id,$pw,$truename,$birthday,$sex)
   {
-    $conn=getConnection();
-    $sql="insert into user (userid,userpw,truename,birthday,sex) values ('" .$id ."','".$pw."','".$truename."','".$birthday."','".$sex."')";
-    echo $sql;
-    $conn->query($sql);
+    $database=getConnection();
+    $datas=$database->insert("user",[
+      "userid"=>$id,
+      "userpw"=>$pw,
+      "truename"=>$truename,
+      "birthday"=>$birthday,
+      "sex"=>$sex
+    ]);
   }
 
   if(checkaccount($_POST["userid"],$_POST["userpw"])===TRUE)
@@ -29,6 +35,7 @@
     resiginaccount($_POST["userid"], $_POST["userpw"], $_POST["truename"], $_POST["birthday"], $_POST["sex"]);
   } else 
   {
-    echo 0;
+    echo $_POST["userid"].$_POST["userpw"];
+
   }
 ?>

@@ -28,7 +28,7 @@ $("#login").click(function (e) {
       else
       {
         console.log(response);
-        $.cookie('user', response, {expires: 7})
+        $.cookie('user', $.trim(response), {expires:7})
         window.location.href="/final/html/user/book_search.html"
       }
     }
